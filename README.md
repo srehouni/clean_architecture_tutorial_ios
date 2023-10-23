@@ -1,3 +1,6 @@
+# Curso en Youtube de Clean Architecture en iOS 
+https://www.youtube.com/playlist?list=PLy4xaLa5b6WPoXzJIwbrjQvbT5sPDJy3M
+
 # Casos de uso
 
 ##  Mostrar lista de cryptomonedas globales

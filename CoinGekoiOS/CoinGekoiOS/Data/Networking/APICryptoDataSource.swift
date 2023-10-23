@@ -84,3 +84,5 @@ class APICryptoDataSource: ApiDataSourceType {
         return error
     }
 }
+
+extension APICryptoDataSource: APICryptocurrencyBasicInfoDataSourceType {}

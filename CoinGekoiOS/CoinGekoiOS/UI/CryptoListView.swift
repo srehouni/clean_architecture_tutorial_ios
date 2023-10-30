@@ -9,10 +9,12 @@ import SwiftUI
 
 struct CryptoListView: View {
     @ObservedObject private var viewModel: CryptoListViewModel
+    private let createCryptoDetailView: CreateCryptoDetailView
     @State private var searchCrypto: String = ""
     
-    init(viewModel: CryptoListViewModel) {
+    init(viewModel: CryptoListViewModel, createCryptoDetailView: CreateCryptoDetailView) {
         self.viewModel = viewModel
+        self.createCryptoDetailView = createCryptoDetailView
     }
     
     var body: some View {
@@ -25,8 +27,14 @@ struct CryptoListView: View {
                     NavigationStack {
                         List {
                             ForEach(viewModel.cryptos, id: \.id) { crypto in
-                                CryptoListBasicInfoItemView(item: crypto)
+                                Button {
+                                    viewModel.getCrypto(crypto)
+                                } label: {
+                                    CryptoListBasicInfoItemView(item: crypto)
+                                }.buttonStyle(.plain)
                             }
+                        }.navigationDestination(item: $viewModel.cryptoDetail) { crypto in
+                            createCryptoDetailView.create(cryptocurrency: crypto)
                         }
                     }.searchable(text: $searchCrypto).onChange(of: searchCrypto) { newValue in
                         viewModel.search(crypto: newValue)

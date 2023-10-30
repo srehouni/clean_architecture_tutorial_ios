@@ -7,24 +7,21 @@
 
 import Foundation
 
-struct CryptoListBasicInfoPresentableItem {
-    let id: String
-    let name: String
-    let symbol: String
-}
-
 class CryptoListViewModel: ObservableObject {
     private let getCryptoList: GetCryptoListType
     private let searchCryptoList: SearchCryptoListType
     private let errorMapper: CryptocurrencyPresentableErrorMapper
+    private let cryptoListItemAdapter: CryptoListItemAdapterType
     @Published var cryptos: [CryptoListBasicInfoPresentableItem] = []
     @Published var showLoadingSpinner: Bool = false
     @Published var showErrorMessage: String?
+    @Published var cryptoDetail: CryptoListPresentableItem?
     
-    init(getCryptoList: GetCryptoListType, searchCryptoList: SearchCryptoListType, errorMapper: CryptocurrencyPresentableErrorMapper) {
+    init(getCryptoList: GetCryptoListType, searchCryptoList: SearchCryptoListType, errorMapper: CryptocurrencyPresentableErrorMapper, cryptoListItemAdapter: CryptoListItemAdapterType) {
         self.getCryptoList = getCryptoList
         self.searchCryptoList = searchCryptoList
         self.errorMapper = errorMapper
+        self.cryptoListItemAdapter = cryptoListItemAdapter
     }
     
     func onAppear() {
@@ -39,6 +36,15 @@ class CryptoListViewModel: ObservableObject {
         Task {
             let result = await searchCryptoList.execute(crypto: crypto)
             handleResult(result)
+        }
+    }
+    
+    func getCrypto(_ crypto: CryptoListBasicInfoPresentableItem) {
+        Task {
+            let result = await cryptoListItemAdapter.adapt(crypto: crypto)
+            Task { @MainActor in
+                cryptoDetail = result
+            }
         }
     }
     

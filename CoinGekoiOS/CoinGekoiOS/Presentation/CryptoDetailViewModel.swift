@@ -7,10 +7,6 @@
 
 import Foundation
 
-
-
-
-
 class CryptoDetailViewModel: ObservableObject {
     @Published var dataPoints: [ChartDataPoint] = []
     @Published var showLoadingSpinner: Bool = false

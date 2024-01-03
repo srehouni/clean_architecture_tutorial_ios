@@ -30,7 +30,7 @@ class CryptocurrencyRepository: GlobalCryptoListRepositoryType {
             return .failure(errorMapper.map(error: cryptoListResult.failureValue as? HTTPClientError))
         }
         
-        let cryptocurrencyBuilderList = domainMapper.getCryptocurrencyBuilderList(symbolList: symbolList, cryptoList: cryptoList)
+        let cryptocurrencyBuilderList = domainMapper.getCryptocurrencyBuilderList(symbolList: symbolList, cryptoList: cryptoList.filter { !$0.id.contains("-") } )
         
         let priceInfoResult = await apiDatasource.getPriceInfoForCryptos(id: cryptocurrencyBuilderList.map { $0.id })
         

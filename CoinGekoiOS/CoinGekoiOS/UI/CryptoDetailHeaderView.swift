@@ -34,7 +34,7 @@ struct CryptoDetailHeaderView: View {
                         .font(.headline)
                         .foregroundColor(cryptocurrency.isPriceChangePositive ? .green : .red)
                 }
-            }.padding(EdgeInsets(top: 20, leading: 0, bottom: 10, trailing: 0))
+            }.padding(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
             
             HStack {
                 Text("Cap. de mercado: ")

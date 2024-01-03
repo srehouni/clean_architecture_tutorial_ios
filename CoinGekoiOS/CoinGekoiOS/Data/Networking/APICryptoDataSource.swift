@@ -59,6 +59,8 @@ class APICryptoDataSource: ApiDataSourceType {
             "include_24hr_change" : true
         ]
         
+        print(queryParameters)
+        
         let endpoint = Endpoint(path: "simple/price",
                                 queryParameters: queryParameters,
                                 method: .get)

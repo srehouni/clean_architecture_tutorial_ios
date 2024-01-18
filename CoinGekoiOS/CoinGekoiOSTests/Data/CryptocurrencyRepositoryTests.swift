@@ -8,31 +8,6 @@
 import XCTest
 @testable import CoinGekoiOS
 
-class ApiDataSourceStub: ApiDataSourceType {
-    private let globalCryptoSymbolList: Result<[String], HTTPClientError>
-    private let cryptoList: Result<[CryptocurrencyBasicDTO], HTTPClientError>
-    private let priceInfo: Result<[String: CryptocurrencyPriceInfoDTO], HTTPClientError>
-    
-    init(globalCryptoSymbolList: Result<[String], HTTPClientError>, cryptoList: Result<[CryptocurrencyBasicDTO], HTTPClientError>, priceInfo: Result<[String : CryptocurrencyPriceInfoDTO], HTTPClientError>) {
-        self.globalCryptoSymbolList = globalCryptoSymbolList
-        self.cryptoList = cryptoList
-        self.priceInfo = priceInfo
-    }
-    
-    
-    func getGlobalCryptoSymbolList() async -> Result<[String], HTTPClientError> {
-        return globalCryptoSymbolList
-    }
-    
-    func getCryptoList() async -> Result<[CryptocurrencyBasicDTO], HTTPClientError> {
-        return cryptoList
-    }
-    
-    func getPriceInfoForCryptos(id: [String]) async -> Result<[String: CryptocurrencyPriceInfoDTO], HTTPClientError> {
-        return priceInfo
-    }
-}
-
 final class CryptocurrencyRepositoryTests: XCTestCase {
 
     func test_getGlobalCryptoList_returns_success() async throws {
@@ -43,7 +18,9 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
             cryptoList: .success(CryptocurrencyBasicDTO.makeCryptoList()),
             priceInfo: .success(CryptocurrencyPriceInfoDTO.makePriceInfo()))
         
-        let sut = CryptocurrencyRepository(apiDatasource: apiDataSourceStub,
+        let sut = CryptocurrencyRepository(apiDataSourcePriceInfo: apiDataSourceStub,
+                                           apiDataSourceSymbol: apiDataSourceStub,
+                                           apiDataSourceCrypto: apiDataSourceStub,
                                            errorMapper: CryptocurrencyDomainErrorMapper(),
                                            domainMapper: CryptocurrencyDomainMapper())
         
@@ -55,7 +32,7 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
         XCTAssertEqual(cryptoList, Cryptocurrency.makeCryptocurrency())
     }
     
-    func test_getGlobalCryptoList_returns_failure_when_apiDataSource_fails_ongetGlobalCryptoSymbolList() async throws {
+    func test_getGlobalCryptoList_returns_failure_when_apiDataSourceSymbol_fails() async throws {
         // GIVEN
         
         let apiDataSourceStub = ApiDataSourceStub(
@@ -63,7 +40,9 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
             cryptoList: .success(CryptocurrencyBasicDTO.makeCryptoList()),
             priceInfo: .success(CryptocurrencyPriceInfoDTO.makePriceInfo()))
         
-        let sut = CryptocurrencyRepository(apiDatasource: apiDataSourceStub,
+        let sut = CryptocurrencyRepository(apiDataSourcePriceInfo: apiDataSourceStub,
+                                           apiDataSourceSymbol: apiDataSourceStub,
+                                           apiDataSourceCrypto: apiDataSourceStub,
                                            errorMapper: CryptocurrencyDomainErrorMapper(),
                                            domainMapper: CryptocurrencyDomainMapper())
         
@@ -79,7 +58,7 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
         XCTAssertEqual(error, CryptocurrecyDomainError.generic)
     }
     
-    func test_getGlobalCryptoList_returns_failure_when_apiDataSource_fails_ongetCryptoList() async throws {
+    func test_getGlobalCryptoList_returns_failure_when_apiDataSourceCrypto_fails() async throws {
         // GIVEN
         
         let apiDataSourceStub = ApiDataSourceStub(
@@ -87,7 +66,9 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
             cryptoList: .failure(.clientError),
             priceInfo: .success(CryptocurrencyPriceInfoDTO.makePriceInfo()))
         
-        let sut = CryptocurrencyRepository(apiDatasource: apiDataSourceStub,
+        let sut = CryptocurrencyRepository(apiDataSourcePriceInfo: apiDataSourceStub,
+                                           apiDataSourceSymbol: apiDataSourceStub,
+                                           apiDataSourceCrypto: apiDataSourceStub,
                                            errorMapper: CryptocurrencyDomainErrorMapper(),
                                            domainMapper: CryptocurrencyDomainMapper())
         
@@ -103,7 +84,7 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
         XCTAssertEqual(error, CryptocurrecyDomainError.generic)
     }
     
-    func test_getGlobalCryptoList_returns_failure_when_apiDataSource_fails_ongetPriceInfoForCryptos() async throws {
+    func test_getGlobalCryptoList_returns_failure_when_apiDataSourcePriceInfo_fails() async throws {
         // GIVEN
         
         let apiDataSourceStub = ApiDataSourceStub(
@@ -111,7 +92,9 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
             cryptoList: .success(CryptocurrencyBasicDTO.makeCryptoList()),
             priceInfo: .failure(.clientError))
         
-        let sut = CryptocurrencyRepository(apiDatasource: apiDataSourceStub,
+        let sut = CryptocurrencyRepository(apiDataSourcePriceInfo: apiDataSourceStub,
+                                           apiDataSourceSymbol: apiDataSourceStub,
+                                           apiDataSourceCrypto: apiDataSourceStub,
                                            errorMapper: CryptocurrencyDomainErrorMapper(),
                                            domainMapper: CryptocurrencyDomainMapper())
         
@@ -140,7 +123,9 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
             cryptoList: .success(cryptoListStub),
             priceInfo: .success(CryptocurrencyPriceInfoDTO.makePriceInfo()))
         
-        let sut = CryptocurrencyRepository(apiDatasource: apiDataSourceStub,
+        let sut = CryptocurrencyRepository(apiDataSourcePriceInfo: apiDataSourceStub,
+                                           apiDataSourceSymbol: apiDataSourceStub,
+                                           apiDataSourceCrypto: apiDataSourceStub,
                                            errorMapper: CryptocurrencyDomainErrorMapper(),
                                            domainMapper: CryptocurrencyDomainMapper())
         
@@ -168,7 +153,9 @@ final class CryptocurrencyRepositoryTests: XCTestCase {
             cryptoList: .success(cryptoListStub),
             priceInfo: .success(CryptocurrencyPriceInfoDTO.makePriceInfo()))
         
-        let sut = CryptocurrencyRepository(apiDatasource: apiDataSourceStub,
+        let sut = CryptocurrencyRepository(apiDataSourcePriceInfo: apiDataSourceStub,
+                                           apiDataSourceSymbol: apiDataSourceStub,
+                                           apiDataSourceCrypto: apiDataSourceStub,
                                            errorMapper: CryptocurrencyDomainErrorMapper(),
                                            domainMapper: CryptocurrencyDomainMapper())
         

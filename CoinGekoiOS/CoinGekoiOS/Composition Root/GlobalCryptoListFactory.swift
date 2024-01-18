@@ -23,12 +23,15 @@ class GlobalCryptoListFactory {
     }
     
     private static func createRepository() -> GlobalCryptoListRepositoryType {
-        return CryptocurrencyRepository(apiDatasource: createDataSource(),
+        let apiDataSource = createDataSource()
+        return CryptocurrencyRepository(apiDataSourcePriceInfo: apiDataSource,
+                                        apiDataSourceSymbol: apiDataSource,
+                                        apiDataSourceCrypto: apiDataSource,
                                         errorMapper: CryptocurrencyDomainErrorMapper(),
                                         domainMapper: CryptocurrencyDomainMapper())
     }
     
-    private static func createDataSource() -> ApiDataSourceType {
+    private static func createDataSource() -> APICryptoDataSource {
         let httpClient = URLSessionHTTPCLient(requestMaker: URLSessionRequestMaker(),
                                               errorResolver: URLSessionErrorResolver())
         return APICryptoDataSource(httpCLient: httpClient)

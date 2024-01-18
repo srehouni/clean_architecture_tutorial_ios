@@ -7,8 +7,14 @@
 
 import Foundation
 
-protocol ApiDataSourceType {
-    func getGlobalCryptoSymbolList() async -> Result<[String], HTTPClientError>
-    func getCryptoList() async -> Result<[CryptocurrencyBasicDTO], HTTPClientError>
+protocol ApiDataSourcePriceInfoType {
     func getPriceInfoForCryptos(id: [String]) async -> Result<[String: CryptocurrencyPriceInfoDTO], HTTPClientError>
+}
+
+protocol ApiDataSourceSymbolType {
+    func getGlobalCryptoSymbolList() async -> Result<[String], HTTPClientError>
+}
+
+protocol ApiDataSourceCryptoType {
+    func getCryptoList() async -> Result<[CryptocurrencyBasicDTO], HTTPClientError>
 }

@@ -7,12 +7,15 @@
 
 import Foundation
 
-class APICryptoDataSource: ApiDataSourceType {
+class APICryptoDataSource {
     private let httpCLient: HTTPCLient
     
     init(httpCLient: HTTPCLient) {
         self.httpCLient = httpCLient
     }
+}
+
+extension APICryptoDataSource: ApiDataSourceSymbolType {
     
     func getGlobalCryptoSymbolList() async -> Result<[String], HTTPClientError> {
         let endpoint = Endpoint(path: "global",
@@ -31,7 +34,9 @@ class APICryptoDataSource: ApiDataSourceType {
         
         return .success(symbolList.data.cryptocurrencies.map { $0.key })
     }
+}
     
+extension APICryptoDataSource: ApiDataSourceCryptoType {
     func getCryptoList() async -> Result<[CryptocurrencyBasicDTO], HTTPClientError> {
         let endpoint = Endpoint(path: "coins/list",
                                 queryParameters: [:],
@@ -49,7 +54,9 @@ class APICryptoDataSource: ApiDataSourceType {
         
         return .success(cryptoList)
     }
-    
+}
+
+extension APICryptoDataSource: ApiDataSourcePriceInfoType {
     func getPriceInfoForCryptos(id: [String]) async -> Result<[String : CryptocurrencyPriceInfoDTO], HTTPClientError> {
         let queryParameters: [String : Any] = [
             "ids" : id.joined(separator: ","),

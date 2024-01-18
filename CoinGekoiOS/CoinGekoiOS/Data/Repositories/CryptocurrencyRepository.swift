@@ -8,19 +8,23 @@
 import Foundation
 
 class CryptocurrencyRepository: GlobalCryptoListRepositoryType {
-    private let apiDatasource: ApiDataSourceType
+    private let apiDataSourcePriceInfo: ApiDataSourcePriceInfoType
+    private let apiDataSourceSymbol: ApiDataSourceSymbolType
+    private let apiDataSourceCrypto: ApiDataSourceCryptoType
     private let errorMapper: CryptocurrencyDomainErrorMapper
     private let domainMapper: CryptocurrencyDomainMapper
     
-    init(apiDatasource: ApiDataSourceType, errorMapper: CryptocurrencyDomainErrorMapper, domainMapper: CryptocurrencyDomainMapper) {
-        self.apiDatasource = apiDatasource
+    init(apiDataSourcePriceInfo: ApiDataSourcePriceInfoType, apiDataSourceSymbol: ApiDataSourceSymbolType, apiDataSourceCrypto: ApiDataSourceCryptoType, errorMapper: CryptocurrencyDomainErrorMapper, domainMapper: CryptocurrencyDomainMapper) {
+        self.apiDataSourcePriceInfo = apiDataSourcePriceInfo
+        self.apiDataSourceSymbol = apiDataSourceSymbol
+        self.apiDataSourceCrypto = apiDataSourceCrypto
         self.errorMapper = errorMapper
         self.domainMapper = domainMapper
     }
     
     func getGlobalCryptoList() async -> Result<[Cryptocurrency], CryptocurrecyDomainError> {
-        let symbolListResult = await apiDatasource.getGlobalCryptoSymbolList()
-        let cryptoListResult = await apiDatasource.getCryptoList()
+        let symbolListResult = await apiDataSourceSymbol.getGlobalCryptoSymbolList()
+        let cryptoListResult = await apiDataSourceCrypto.getCryptoList()
         
         guard case .success(let symbolList) = symbolListResult else {
             return .failure(errorMapper.map(error: symbolListResult.failureValue as? HTTPClientError))
@@ -32,7 +36,7 @@ class CryptocurrencyRepository: GlobalCryptoListRepositoryType {
         
         let cryptocurrencyBuilderList = domainMapper.getCryptocurrencyBuilderList(symbolList: symbolList, cryptoList: cryptoList.filter { !$0.id.contains("-") } )
         
-        let priceInfoResult = await apiDatasource.getPriceInfoForCryptos(id: cryptocurrencyBuilderList.map { $0.id })
+        let priceInfoResult = await apiDataSourcePriceInfo.getPriceInfoForCryptos(id: cryptocurrencyBuilderList.map { $0.id })
         
         guard case .success(let priceInfo) = priceInfoResult else {
             return .failure(errorMapper.map(error: priceInfoResult.failureValue as? HTTPClientError))

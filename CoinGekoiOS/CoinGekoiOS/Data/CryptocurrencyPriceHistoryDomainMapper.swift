@@ -24,7 +24,7 @@ class CryptocurrencyPriceHistoryDomainMapper {
     
     private func timestampToDate(_ timestamp: Double) -> Date? {
         let calendar = Calendar.current
-        let components = calendar.dateComponents([.day, .month, .year], from: Date(timeIntervalSince1970: timestamp / 1000))
+        let components = calendar.dateComponents([.day, .month, .year], from: Date(timeIntervalSince1970: timestamp))
         
         guard let date = calendar.date(from: components) else { return nil }
         

@@ -32,7 +32,7 @@ extension APICryptoDataSource: ApiDataSourceSymbolType {
             return .failure(.parsingError)
         }
         
-        return .success(symbolList.data.cryptocurrencies.map { $0.key })
+        return .success(symbolList.data.cryptocurrencies.map { $0.key }.sorted())
     }
 }
     
@@ -65,8 +65,6 @@ extension APICryptoDataSource: ApiDataSourcePriceInfoType {
             "include_24hr_vol" : true,
             "include_24hr_change" : true
         ]
-        
-        print(queryParameters)
         
         let endpoint = Endpoint(path: "simple/price",
                                 queryParameters: queryParameters,

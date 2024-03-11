@@ -48,3 +48,24 @@ extension CryptocurrencyPriceHistory.DataPoint: Equatable {
         return lhs.price == rhs.price && lhs.date == rhs.date
     }
 }
+
+extension CryptocurrencyPriceHistoryDTO: Equatable {
+    public static func == (lhs: CryptocurrencyPriceHistoryDTO, rhs: CryptocurrencyPriceHistoryDTO) -> Bool {
+        lhs.prices == rhs.prices
+    }
+}
+
+extension CryptocurrencyBasicDTO: Equatable {
+    public static func == (lhs: CryptocurrencyBasicDTO, rhs: CryptocurrencyBasicDTO) -> Bool {
+        lhs.id == rhs.id
+    }
+}
+
+extension CryptocurrencyPriceInfoDTO: Equatable {
+    public static func == (lhs: CryptocurrencyPriceInfoDTO, rhs: CryptocurrencyPriceInfoDTO) -> Bool {
+        lhs.price == lhs.price
+        && lhs.marketCap == lhs.marketCap
+        && lhs.volume24h == lhs.volume24h
+        && lhs.price24h == lhs.price24h
+    }
+}

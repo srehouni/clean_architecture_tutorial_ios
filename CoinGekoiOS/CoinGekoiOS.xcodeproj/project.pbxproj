@@ -84,6 +84,10 @@
 		8E80DAD02B57EFE200DFFBC0 /* CacheCryptocurrencyBasicInfoDataSourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E80DACF2B57EFE200DFFBC0 /* CacheCryptocurrencyBasicInfoDataSourceStub.swift */; };
 		8E80DAD22B5800BA00DFFBC0 /* ApiDataSourceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E80DAD12B5800BA00DFFBC0 /* ApiDataSourceStub.swift */; };
 		8E81501C2B45D0D5004CFD25 /* CryptocurrencyRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81501B2B45D0D5004CFD25 /* CryptocurrencyRepositoryTests.swift */; };
+		8EB48E3D2B9CD45B00BBF70C /* APICryptoDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB48E3C2B9CD45B00BBF70C /* APICryptoDataSourceTests.swift */; };
+		8EB48E3F2B9CE46700BBF70C /* APIPriceDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB48E3E2B9CE46700BBF70C /* APIPriceDataSourceTests.swift */; };
+		8EB48E412B9CE76500BBF70C /* HTTPCLientStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB48E402B9CE76500BBF70C /* HTTPCLientStub.swift */; };
+		8EB48E432B9CE80600BBF70C /* StrategyCacheCryptocurrencyBasicInfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB48E422B9CE80600BBF70C /* StrategyCacheCryptocurrencyBasicInfoTests.swift */; };
 		8ECAD79D2AE5A05800387FE8 /* CryptocurrencyBasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAD79C2AE5A05800387FE8 /* CryptocurrencyBasicInfo.swift */; };
 		8ECAD79F2AE5A09600387FE8 /* GetCryptoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAD79E2AE5A09600387FE8 /* GetCryptoList.swift */; };
 		8ECAD7A12AE5A2A800387FE8 /* CryptoListBasicInfoRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ECAD7A02AE5A2A800387FE8 /* CryptoListBasicInfoRepositoryType.swift */; };
@@ -198,6 +202,10 @@
 		8E80DACF2B57EFE200DFFBC0 /* CacheCryptocurrencyBasicInfoDataSourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheCryptocurrencyBasicInfoDataSourceStub.swift; sourceTree = "<group>"; };
 		8E80DAD12B5800BA00DFFBC0 /* ApiDataSourceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataSourceStub.swift; sourceTree = "<group>"; };
 		8E81501B2B45D0D5004CFD25 /* CryptocurrencyRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyRepositoryTests.swift; sourceTree = "<group>"; };
+		8EB48E3C2B9CD45B00BBF70C /* APICryptoDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICryptoDataSourceTests.swift; sourceTree = "<group>"; };
+		8EB48E3E2B9CE46700BBF70C /* APIPriceDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIPriceDataSourceTests.swift; sourceTree = "<group>"; };
+		8EB48E402B9CE76500BBF70C /* HTTPCLientStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPCLientStub.swift; sourceTree = "<group>"; };
+		8EB48E422B9CE80600BBF70C /* StrategyCacheCryptocurrencyBasicInfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyCacheCryptocurrencyBasicInfoTests.swift; sourceTree = "<group>"; };
 		8ECAD79C2AE5A05800387FE8 /* CryptocurrencyBasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptocurrencyBasicInfo.swift; sourceTree = "<group>"; };
 		8ECAD79E2AE5A09600387FE8 /* GetCryptoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCryptoList.swift; sourceTree = "<group>"; };
 		8ECAD7A02AE5A2A800387FE8 /* CryptoListBasicInfoRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoListBasicInfoRepositoryType.swift; sourceTree = "<group>"; };
@@ -274,6 +282,7 @@
 				8E80DACD2B57EFD100DFFBC0 /* APICryptocurrencyBasicInfoDataSourceStub.swift */,
 				8E80DACF2B57EFE200DFFBC0 /* CacheCryptocurrencyBasicInfoDataSourceStub.swift */,
 				8E80DAD12B5800BA00DFFBC0 /* ApiDataSourceStub.swift */,
+				8EB48E402B9CE76500BBF70C /* HTTPCLientStub.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -433,11 +442,11 @@
 				8E57D3EE2ABA3431004F3E43 /* HTTPClientError.swift */,
 				8E57D3F02ABA343F004F3E43 /* ApiDataSourceType.swift */,
 				8E80403C2AC096130037B680 /* APICryptoDataSource.swift */,
+				8E3F7E3B2ACF2FC3001D2AF5 /* APIPriceDataSource.swift */,
 				8E8040402AC09DB00037B680 /* Endpoint.swift */,
 				8E8040422AC09DBD0037B680 /* HTTPMethod.swift */,
 				8E8040442AC09DDD0037B680 /* HTTPCLient.swift */,
 				8E3F7E392ACF2C04001D2AF5 /* ApiPriceDataSourceType.swift */,
-				8E3F7E3B2ACF2FC3001D2AF5 /* APIPriceDataSource.swift */,
 				8ECAD7A42AE5A6FA00387FE8 /* APICryptocurrencyBasicInfoDataSourceType.swift */,
 			);
 			path = Networking;
@@ -516,6 +525,9 @@
 				8E81501B2B45D0D5004CFD25 /* CryptocurrencyRepositoryTests.swift */,
 				8E80DAC72B57E33100DFFBC0 /* CryptocurrencyPriceRepositoryTests.swift */,
 				8E80DAC92B57EE9E00DFFBC0 /* CryptocurrencyBasicInfoRepositoryTests.swift */,
+				8EB48E3C2B9CD45B00BBF70C /* APICryptoDataSourceTests.swift */,
+				8EB48E3E2B9CE46700BBF70C /* APIPriceDataSourceTests.swift */,
+				8EB48E422B9CE80600BBF70C /* StrategyCacheCryptocurrencyBasicInfoTests.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -736,9 +748,11 @@
 			files = (
 				8E80DAD02B57EFE200DFFBC0 /* CacheCryptocurrencyBasicInfoDataSourceStub.swift in Sources */,
 				8E2C00E42AF2CB8F0093797B /* SearchCryptoListTests.swift in Sources */,
+				8EB48E412B9CE76500BBF70C /* HTTPCLientStub.swift in Sources */,
 				8E80DACA2B57EE9E00DFFBC0 /* CryptocurrencyBasicInfoRepositoryTests.swift in Sources */,
 				8E2C00F82AF2D89A0093797B /* GetPriceHistoryTests.swift in Sources */,
 				8E2C00E82AF2D1A00093797B /* SearchCryptoListBasicInfoRepositoryStub.swift in Sources */,
+				8EB48E432B9CE80600BBF70C /* StrategyCacheCryptocurrencyBasicInfoTests.swift in Sources */,
 				8E2C00F02AF2D4800093797B /* GlobalCryptoListRepositoryStub.swift in Sources */,
 				8E2C00F62AF2D86B0093797B /* CryptoListBasicInfoRepositoryStub.swift in Sources */,
 				8E2C00EE2AF2D4730093797B /* GetPriceInfoTests.swift in Sources */,
@@ -748,6 +762,8 @@
 				8E2C00EC2AF2D2410093797B /* GetGlobalCryptoListTests.swift in Sources */,
 				8E80DAC82B57E33100DFFBC0 /* CryptocurrencyPriceRepositoryTests.swift in Sources */,
 				8E80DACE2B57EFD100DFFBC0 /* APICryptocurrencyBasicInfoDataSourceStub.swift in Sources */,
+				8EB48E3D2B9CD45B00BBF70C /* APICryptoDataSourceTests.swift in Sources */,
+				8EB48E3F2B9CE46700BBF70C /* APIPriceDataSourceTests.swift in Sources */,
 				8E2C00FA2AF2DA0A0093797B /* CryptocurrencyPriceHistoryRepositoryStub.swift in Sources */,
 				8E57D3BF2ABA2B61004F3E43 /* CoinGekoiOSTests.swift in Sources */,
 				8E80DACC2B57EFB400DFFBC0 /* ApiPriceDataSourceStub.swift in Sources */,

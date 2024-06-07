@@ -47,7 +47,6 @@
 		8E57D3B02ABA2B60004F3E43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3AF2ABA2B60004F3E43 /* ContentView.swift */; };
 		8E57D3B22ABA2B61004F3E43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E57D3B12ABA2B61004F3E43 /* Assets.xcassets */; };
 		8E57D3B52ABA2B61004F3E43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E57D3B42ABA2B61004F3E43 /* Preview Assets.xcassets */; };
-		8E57D3BF2ABA2B61004F3E43 /* CoinGekoiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3BE2ABA2B61004F3E43 /* CoinGekoiOSTests.swift */; };
 		8E57D3D92ABA2D82004F3E43 /* Cryptocurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3D82ABA2D82004F3E43 /* Cryptocurrency.swift */; };
 		8E57D3DE2ABA2E15004F3E43 /* GetGlobalCryptoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3DD2ABA2E15004F3E43 /* GetGlobalCryptoList.swift */; };
 		8E57D3E12ABA303C004F3E43 /* GlobalCryptoListRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3E02ABA303C004F3E43 /* GlobalCryptoListRepositoryType.swift */; };
@@ -61,8 +60,6 @@
 		8E57D3F52ABA3F68004F3E43 /* CryptocurrencyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3F42ABA3F68004F3E43 /* CryptocurrencyBuilder.swift */; };
 		8E57D3F72ABA3F79004F3E43 /* CryptocurrencyDomainErrorMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3F62ABA3F79004F3E43 /* CryptocurrencyDomainErrorMapper.swift */; };
 		8E57D3FA2ABA3F97004F3E43 /* Foundation+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3F92ABA3F97004F3E43 /* Foundation+Extensions.swift */; };
-		8E60A4762B3B7B4500943F37 /* CoinGekoiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3C82ABA2B61004F3E43 /* CoinGekoiOSUITests.swift */; };
-		8E60A4772B3B7B4800943F37 /* CoinGekoiOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E57D3CA2ABA2B61004F3E43 /* CoinGekoiOSUITestsLaunchTests.swift */; };
 		8E80403D2AC096130037B680 /* APICryptoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E80403C2AC096130037B680 /* APICryptoDataSource.swift */; };
 		8E80403F2AC099930037B680 /* CryptocurrencyGlobalInfoDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E80403E2AC099930037B680 /* CryptocurrencyGlobalInfoDTO.swift */; };
 		8E8040412AC09DB00037B680 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E8040402AC09DB00037B680 /* Endpoint.swift */; };
@@ -105,13 +102,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		8E57D3BB2ABA2B61004F3E43 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E57D3A22ABA2B60004F3E43 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 8E57D3A92ABA2B60004F3E43;
-			remoteInfo = CoinGekoiOS;
-		};
-		8E57D3C52ABA2B61004F3E43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8E57D3A22ABA2B60004F3E43 /* Project object */;
 			proxyType = 1;
@@ -163,10 +153,6 @@
 		8E57D3B12ABA2B61004F3E43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E57D3B42ABA2B61004F3E43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8E57D3BA2ABA2B61004F3E43 /* CoinGekoiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinGekoiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E57D3BE2ABA2B61004F3E43 /* CoinGekoiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGekoiOSTests.swift; sourceTree = "<group>"; };
-		8E57D3C42ABA2B61004F3E43 /* CoinGekoiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinGekoiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E57D3C82ABA2B61004F3E43 /* CoinGekoiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGekoiOSUITests.swift; sourceTree = "<group>"; };
-		8E57D3CA2ABA2B61004F3E43 /* CoinGekoiOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinGekoiOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8E57D3D72ABA2B77004F3E43 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8E57D3D82ABA2D82004F3E43 /* Cryptocurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cryptocurrency.swift; sourceTree = "<group>"; };
 		8E57D3DD2ABA2E15004F3E43 /* GetGlobalCryptoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGlobalCryptoList.swift; sourceTree = "<group>"; };
@@ -236,13 +222,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E57D3C12ABA2B61004F3E43 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -292,7 +271,6 @@
 			children = (
 				8E57D3AC2ABA2B60004F3E43 /* CoinGekoiOS */,
 				8E57D3BD2ABA2B61004F3E43 /* CoinGekoiOSTests */,
-				8E57D3C72ABA2B61004F3E43 /* CoinGekoiOSUITests */,
 				8E57D3AB2ABA2B60004F3E43 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -302,7 +280,6 @@
 			children = (
 				8E57D3AA2ABA2B60004F3E43 /* CoinGekoiOS.app */,
 				8E57D3BA2ABA2B61004F3E43 /* CoinGekoiOSTests.xctest */,
-				8E57D3C42ABA2B61004F3E43 /* CoinGekoiOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -340,18 +317,8 @@
 				8E81501A2B45D0C2004CFD25 /* Data */,
 				8E2C00E62AF2D1960093797B /* Helpers */,
 				8E2C00E52AF2D18B0093797B /* Domain */,
-				8E57D3BE2ABA2B61004F3E43 /* CoinGekoiOSTests.swift */,
 			);
 			path = CoinGekoiOSTests;
-			sourceTree = "<group>";
-		};
-		8E57D3C72ABA2B61004F3E43 /* CoinGekoiOSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				8E57D3C82ABA2B61004F3E43 /* CoinGekoiOSUITests.swift */,
-				8E57D3CA2ABA2B61004F3E43 /* CoinGekoiOSUITestsLaunchTests.swift */,
-			);
-			path = CoinGekoiOSUITests;
 			sourceTree = "<group>";
 		};
 		8E57D3DA2ABA2D85004F3E43 /* Domain */ = {
@@ -580,24 +547,6 @@
 			productReference = 8E57D3BA2ABA2B61004F3E43 /* CoinGekoiOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8E57D3C32ABA2B61004F3E43 /* CoinGekoiOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8E57D3D42ABA2B61004F3E43 /* Build configuration list for PBXNativeTarget "CoinGekoiOSUITests" */;
-			buildPhases = (
-				8E57D3C02ABA2B61004F3E43 /* Sources */,
-				8E57D3C12ABA2B61004F3E43 /* Frameworks */,
-				8E57D3C22ABA2B61004F3E43 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8E57D3C62ABA2B61004F3E43 /* PBXTargetDependency */,
-			);
-			name = CoinGekoiOSUITests;
-			productName = CoinGekoiOSUITests;
-			productReference = 8E57D3C42ABA2B61004F3E43 /* CoinGekoiOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -612,10 +561,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					8E57D3B92ABA2B61004F3E43 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = 8E57D3A92ABA2B60004F3E43;
-					};
-					8E57D3C32ABA2B61004F3E43 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = 8E57D3A92ABA2B60004F3E43;
 					};
@@ -636,7 +581,6 @@
 			targets = (
 				8E57D3A92ABA2B60004F3E43 /* CoinGekoiOS */,
 				8E57D3B92ABA2B61004F3E43 /* CoinGekoiOSTests */,
-				8E57D3C32ABA2B61004F3E43 /* CoinGekoiOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -652,13 +596,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8E57D3B82ABA2B61004F3E43 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E57D3C22ABA2B61004F3E43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -765,19 +702,9 @@
 				8EB48E3D2B9CD45B00BBF70C /* APICryptoDataSourceTests.swift in Sources */,
 				8EB48E3F2B9CE46700BBF70C /* APIPriceDataSourceTests.swift in Sources */,
 				8E2C00FA2AF2DA0A0093797B /* CryptocurrencyPriceHistoryRepositoryStub.swift in Sources */,
-				8E57D3BF2ABA2B61004F3E43 /* CoinGekoiOSTests.swift in Sources */,
 				8E80DACC2B57EFB400DFFBC0 /* ApiPriceDataSourceStub.swift in Sources */,
 				8E2C00F22AF2D7450093797B /* CryptocurrencyPriceInfoRepositoryStub.swift in Sources */,
 				8E2C00F42AF2D7600093797B /* GetCryptoListTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8E57D3C02ABA2B61004F3E43 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E60A4762B3B7B4500943F37 /* CoinGekoiOSUITests.swift in Sources */,
-				8E60A4772B3B7B4800943F37 /* CoinGekoiOSUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,11 +715,6 @@
 			isa = PBXTargetDependency;
 			target = 8E57D3A92ABA2B60004F3E43 /* CoinGekoiOS */;
 			targetProxy = 8E57D3BB2ABA2B61004F3E43 /* PBXContainerItemProxy */;
-		};
-		8E57D3C62ABA2B61004F3E43 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 8E57D3A92ABA2B60004F3E43 /* CoinGekoiOS */;
-			targetProxy = 8E57D3C52ABA2B61004F3E43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1011,44 +933,6 @@
 			};
 			name = Release;
 		};
-		8E57D3D52ABA2B61004F3E43 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2K6SZ3328X;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rehouni..CoinGekoiOSUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CoinGekoiOS;
-			};
-			name = Debug;
-		};
-		8E57D3D62ABA2B61004F3E43 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2K6SZ3328X;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.rehouni..CoinGekoiOSUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = CoinGekoiOS;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1075,15 +959,6 @@
 			buildConfigurations = (
 				8E57D3D22ABA2B61004F3E43 /* Debug */,
 				8E57D3D32ABA2B61004F3E43 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8E57D3D42ABA2B61004F3E43 /* Build configuration list for PBXNativeTarget "CoinGekoiOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8E57D3D52ABA2B61004F3E43 /* Debug */,
-				8E57D3D62ABA2B61004F3E43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,25 @@
+name: Build and test
+on: 
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Select XCode version 
+        run: sudo xcode-select -s /Applications/Xcode_15.3.app
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.2
+
+      - name: Install fastlane
+        run: gem install fastlane
+
+      - name: Run tests
+        run: cd CoinGekoiOS/; fastlane tests  
